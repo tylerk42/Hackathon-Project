@@ -21,13 +21,13 @@
         <option value="-1">Please Select Region</option>
     <option value="0">Europe</option>
     <option value="1">North America</option>
-    <option value="2">South America</option>
+    <option value="2">Latin America</option>
     </select>
 
 </body>
 <div><br>Speed Of Roller Coaster
     <br>
-<label>Speed: </label>
+<label>Speed (km/h): </label>
 <Label id="sliderVal"></Label><input oninput="showSpeed()" type="range" min="16" max="125" value="16" class="slider" id="coasterSpeed">
 </div>
 
@@ -42,6 +42,9 @@
 <label>Length(meters): </label>
 <Label id="sliderNum"></Label><input oninput="showLength()" type="range" min="60" max="2300" value="60" class="slider" id="coasterLength">
 </div>
+<br>
+
+<button onclick="createlist()">Find My Coaster!</button>
 
 <div id="output">
 
