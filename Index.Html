@@ -5,23 +5,29 @@
     <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
 </head>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<header>
+    <H1>Roller Coasters Of The World!!!</H1>
+    <h3> If you are love rollercoasters but aren't sure which is best for you,then this is the right place for you!</h3>
+</header>
+
 <body>
         <center>
-    <H1>Roller Coasters Of The World!!!</H1>
-    <h3> If you are love rollercoasters but aren't sure which is best for you,<br>then this is the right place for you!</h3>
+   
     
     <select name="material" id="material">
         <option value="-1">Please Select Material Preferance</option>
-    <option value="0">Steel</option>
-    <option value="1">Wood</option></select>
+    <option value="Steel">Steel</option>
+    <option value="Wood">Wood</option></select>
     
     <select name="region" id="region">
         <option value="-1">Please Select Region</option>
-    <option value="0">Europe</option>
-    <option value="1">North America</option>
-    <option value="2">Latin America</option>
+    <option value="Europe">Europe</option>
+    <option value="North America">North America</option>
+    <option value="Latin America">Latin America</option>
     </select>
 
 </body>
@@ -46,7 +52,9 @@
 
 <button onclick="createlist()">Find My Coaster!</button>
 
-<div id="output">
+<div class="outputBox">
+    <p id="output">   </p>
+</div>
 
 </div>
 </html>

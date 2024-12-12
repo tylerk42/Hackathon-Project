@@ -59,9 +59,12 @@ function createlist(material, region, speed, height, length){
             var lengthWork=true
         }
         if(material==constructionMaterial[i]&&region==parkRegion[i]&&lengthWork==true&&heightWork==true&&speedWork==true){
-            infoList[i]= "("+coasterName[i]+", "+parkName[i]+", "+city[i]+", "+country[i]+")"
-            matchingOutputs.push(infoList[i])
+            infoList= "(Coaster Name: "+coasterName[i]+", Park Name:"+parkName[i]+", City:"+city[i]+", Country: "+country[i]+")"
+            matchingOutputs.push(coasterName[i])
+            // console.log(infoList)
+            console.log(height)
         }
     }
-    console.log(matchingOutputs)
+    // console.log(matchingOutputs)
+
 }  

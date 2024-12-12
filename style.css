@@ -19,6 +19,10 @@ button{
     padding: 5px;
     background-color: aqua;
 }
-output{
-    background-color: azure;
+.outputBox{
+    border-color: rgb(8, 6, 6);
+    min-height: 200px;
+    width: 80%;
+    background-color:aqua;
+
 }
