@@ -1,34 +1,59 @@
-body{
-    
-        font-family: "Outfit", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-style: normal;
-        
-}
+
 header{
-    /* font-family: Comic Sans MS, Comic Sans, cursive; */
     font-size: 15px;
     text-align: center;
-    background-color: aqua;
+    background-color: rgb(235, 132, 16);
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    padding: 1px;
+    margin: 10px;
 }
 
 
 select{
-    /* font-family: Comic Sans MS, Comic Sans, cursive; */
     cursor: pointer;
     padding: 5px;
+    border: 2px solid black;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    width: 250px;
 }
 button{
     cursor: pointer;
-    /* font-family: Comic Sans MS, Comic Sans, cursive; */
     padding: 5px;
-    background-color: aqua;
+    background-color: rgb(235, 132, 16);
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 .outputBox{
     border-color: rgb(8, 6, 6);
     min-height: 200px;
     width: 80%;
-    background-color:aqua;
-
+    padding: 4px;
+    margin: 10px;
+    background-color: rgb(235, 132, 16);
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+label{
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+body{
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    background-color: rgb(210, 154, 50);
 }
