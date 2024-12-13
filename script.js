@@ -26,10 +26,10 @@ var inversion=getColumn(url,10)
 // }
 var inversionStatus
 function inversionTrue(){
-inversion=true
+inversionStatus=true
 }
 function inversionFalse(){
-inversion=false
+inversionStatus=false
 }
 function createlist(material, region, speed, height, length){
     document.getElementById("output").innerHTML=""
@@ -55,4 +55,5 @@ function createlist(material, region, speed, height, length){
     speedWork=false
     heightWork=false
     lengthWork=false
+    inversionStatus=false
 }  
