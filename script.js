@@ -19,7 +19,9 @@ var rollerHeight= getColumn(url,7)
 var rollerSpeed= getColumn(url,8)
 var rollerLength= getColumn(url,9)
 
-
+// function createlist(){
+//     console.log(document.getElementById("coasterHeight").value)
+// }
 
 function createlist(material, region, speed, height, length){
     document.getElementById("output").innerHTML=""
@@ -30,41 +32,47 @@ function createlist(material, region, speed, height, length){
     var speed= document.getElementById("coasterSpeed").value;
     var height= document.getElementById("coasterHeight").value;
     var length= document.getElementById("coasterLength").value;
+    var speedWork=false
+    var heightWork=false
+    var lengthWork=false
     for(var i=0; i<coasterName.length; i++){
         if (rollerSpeed[i]<=50&&speed<=50){
-            var speedWork=true
+            speedWork=true
         }
         else if (rollerSpeed[i]<=100&&rollerSpeed[i]>50&&speed<=100&&speed>50){
-            var speedWork=true
+            speedWork=true
         }
         else if (rollerSpeed[i]>100&&speed>100){
-            var speedWork=true
+            speedWork=true
+            console.log("w")
         }
         else if (rollerHeight[i]<=15&&height<=15){
-            var heightWork=true
+            heightWork=true
         }
         else if (rollerHeight[i]<=75&&height[i]>15&&height<=75&&height>15){
-            var heightWork=true
+            heightWork=true
         }
         else if (rollerHeight[i]>75&&speed>75){
-            var heightWork=true
+            heightWork=true
         }
         else if (rollerLength[i]<=250&&length<=250){
-            var lengthWork=true
+            lengthWork=true
         }
         else if (rollerLength[i]<=1000&&length[i]>250&&length<=1000&&length>250){
-            var lengthWork=true
+            lengthWork=true
         }
         else if (rollerLength[i]>1000&&length>1000){
-            var lengthWork=true
+            lengthWork=true
         }
         if(material==constructionMaterial[i]&&region==parkRegion[i]&&lengthWork==true&&heightWork==true&&speedWork==true){
             infoList= "(Coaster Name: "+coasterName[i]+", Park Name:"+parkName[i]+", City:"+city[i]+", Country: "+country[i]+")"
-            matchingOutputs.push(coasterName[i])
+            matchingOutputs.push(infoList)
             // console.log(infoList)
-            console.log(height)
+            infoList=""
         }
     }
-    // console.log(matchingOutputs)
-
+    console.log(matchingOutputs)
+    speedWork=false
+    heightWork=false
+    lengthWork=false
 }  

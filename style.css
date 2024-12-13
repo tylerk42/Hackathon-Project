@@ -1,21 +1,27 @@
+body{
+    
+        font-family: "Outfit", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        
+}
 header{
-    font-family: Comic Sans MS, Comic Sans, cursive;
+    /* font-family: Comic Sans MS, Comic Sans, cursive; */
     font-size: 15px;
     text-align: center;
     background-color: aqua;
 }
 
-body{
-    font-family:Comic Sans MS, Comic Sans, cursive;
-}
+
 select{
-    font-family: Comic Sans MS, Comic Sans, cursive;
-cursor: pointer;
-padding: 5px;
+    /* font-family: Comic Sans MS, Comic Sans, cursive; */
+    cursor: pointer;
+    padding: 5px;
 }
 button{
     cursor: pointer;
-    font-family: Comic Sans MS, Comic Sans, cursive;
+    /* font-family: Comic Sans MS, Comic Sans, cursive; */
     padding: 5px;
     background-color: aqua;
 }
