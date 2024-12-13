@@ -37,7 +37,7 @@ function createlist(material, region, speed, height, length){
     var heightWork=false
     var lengthWork=false
     for(var i=0; i<coasterName.length; i++){
-        if(material==constructionMaterial[i]&&region==parkRegion[i]&&Math.abs(rollerSpeed[i] - speed) < 10&&Math.abs(rollerHeight[i] - height) < 10&&Math.abs(rollerLength[i] - length) < 150){
+        if(material==constructionMaterial[i]&&region==parkRegion[i]&&Math.abs(rollerSpeed[i] - speed) < 10&&Math.abs(rollerHeight[i] - height) < 10&&Math.abs(rollerLength[i] - length) < 100){
             infoList= "(Coaster Name: "+coasterName[i]+", Park Name:"+parkName[i]+", City:"+city[i]+", Country: "+country[i]+")"
             matchingOutputs.push(infoList)
             // console.log(infoList)
