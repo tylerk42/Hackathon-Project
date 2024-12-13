@@ -16,21 +16,14 @@ var city= getColumn(url,3)
 var country= getColumn(url,4)
 var parkRegion= getColumn(url,5)
 var constructionMaterial= getColumn(url,6)
-var rollerHeight= getColumn(url,7)*3.28
-var rollerSpeed= getColumn(url,8)*.62
-var rollerLength= getColumn(url,9)*3.28
-var inversion=getColumn(url,10)
+var rollerHeight= getColumn(url,7)
+var rollerSpeed= getColumn(url,8)
+var rollerLength= getColumn(url,9)
 
 // function createlist(){
 //     console.log(document.getElementById("coasterHeight").value)
 // }
-var inversionStatus
-function inversionTrue(){
-inversionStatus=true
-}
-function inversionFalse(){
-inversionStatus=false
-}
+
 function createlist(material, region, speed, height, length){
     document.getElementById("output").innerHTML=""
     var matchingOutputs=[];
@@ -44,16 +37,20 @@ function createlist(material, region, speed, height, length){
     var heightWork=false
     var lengthWork=false
     for(var i=0; i<coasterName.length; i++){
-        if(material==constructionMaterial[i]&&region==parkRegion[i]&&Math.abs(rollerSpeed[i] - speed) < 10&&Math.abs(rollerHeight[i] - height) < 10&&Math.abs(rollerLength[i] - length) < 100&&inversion[i]==inversionStatus){
+        if(material==constructionMaterial[i]&&region==parkRegion[i]&&Math.abs(rollerSpeed[i] - speed) < 30&&Math.abs(rollerHeight[i] - height) < 20&&Math.abs(rollerLength[i] - length) < 500){
             infoList= "(Coaster Name: "+coasterName[i]+", Park Name:"+parkName[i]+", City:"+city[i]+", Country: "+country[i]+")"
             matchingOutputs.push(infoList)
             // console.log(infoList)
-            infoList=""
+            
         }
+        infoList=""
+    }
+    if(matchingOutputs="[]"){
+            matchingOutputs="Sorry we couldn't find any matches"
     }
     console.log(matchingOutputs)
     speedWork=false
     heightWork=false
     lengthWork=false
-    inversionStatus=false
-}  
+
+}

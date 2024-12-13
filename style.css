@@ -9,6 +9,10 @@ header{
     font-style: normal;
     padding: 1px;
     margin: 10px;
+    border-radius: 25px;
+    padding: 20px;
+    width: 450px;
+    height: 150px;
 }
 
 
@@ -31,6 +35,7 @@ button{
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
+
 }
 .outputBox{
     border-color: rgb(8, 6, 6);
@@ -43,6 +48,10 @@ button{
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
+    border-radius: 25px;
+    padding: 20px;
+    width: 400px;
+    height: 150px;
 }
 label{
     font-family: "Outfit", sans-serif;
@@ -55,5 +64,5 @@ body{
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    background-color: rgb(210, 154, 50);
+    background-color: rgb(202, 221, 238);
 }
