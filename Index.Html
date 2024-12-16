@@ -13,6 +13,8 @@
 </head>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <header>
+    <center>
+
     <H1>Roller Coasters Of The World!!!</H1>
     <h3> If you love rollercoasters but aren't sure which is best for you,then this is the right place for you!</h3>
 </header>
@@ -37,27 +39,27 @@
 <div><br>Speed Of Roller Coaster
     <br>
 <label>Speed (m/h): </label>
-<Label id="sliderVal"></Label><input oninput="showSpeed()" type="range" min="9" max="77" value="16" class="slider" id="coasterSpeed">
+<Label id="sliderVal"></Label><input oninput="showSpeed()" type="range" min="5" max="80" value="5" class="slider" id="coasterSpeed">
 </div>
 
 <div><br>Height Of Roller Coaster
     <br>
 <label>Height(feet): </label>
-<Label id="sliderValue"></Label><input oninput="showHeight()" type="range" min="9" max="430" value="3" class="slider" id="coasterHeight">
+<Label id="sliderValue"></Label><input oninput="showHeight()" type="range" min="9" max="430" value="9" class="slider" id="coasterHeight">
 </div>
 
 <div><br>Length Of Roller Coaster
     <br>
 <label>Length(feet): </label>
-<Label id="sliderNum"></Label><input oninput="showLength()" type="range" min="190" max="7550" value="60" class="slider" id="coasterLength">
+<Label id="sliderNum"></Label><input oninput="showLength()" type="range" min="190" max="7550" value="190" class="slider" id="coasterLength">
 </div>
 <br>
-Would you Like inversions?
+Would You Like Inversions?
 <button onclick="inversionTrue()">Yes!</button>
 <button onclick="inversionFalse()">No Thanks</button>
 <br>
 <br>
-<button onclick="createlist()">Find My Coaster!</button>
+<button onclick="createlist(document.getElementById('material').value, document.getElementById('region').value,document.getElementById('coasterSpeed').value, document.getElementById('coasterHeight').value,document.getElementById('coasterLength').value)">Find My Coaster!</button>
 
 <div class="outputBox">
     <p id="output">   </p>

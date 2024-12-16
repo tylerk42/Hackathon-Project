@@ -17,48 +17,36 @@ var country= getColumn(url,4)
 var parkRegion= getColumn(url,5)
 var constructionMaterial= getColumn(url,6)
 var rollerHeight= getColumn(url,7)*3.28
-var rollerSpeed= getColumn(url,8)*.62
+var rollerSpeed= getColumn(url,8)/1.609
 var rollerLength= getColumn(url,9)*3.28
 var inversion=getColumn(url,10)
 
 // function createlist(){
 //     console.log(document.getElementById("coasterHeight").value)
 // }
-var inversionStatus="no";
+var inversionStatus=false;
 function inversionTrue(){
-inversionStatus="yes"
+inversionStatus=true
 }
 function inversionFalse(){
-    inversionStatus="no"
+    inversionStatus=false
 }
 function createlist(material, region, speed, height, length){
     document.getElementById("output").innerHTML=""
     var matchingOutputs=[];
     var infoList;
-    var material = document.getElementById("material").value;
-    var region = document.getElementById("region").value;
-    var speed = document.getElementById("coasterSpeed").value;
-    var height = document.getElementById("coasterHeight").value;
-    var length = document.getElementById("coasterLength").value;
-    var speedWork =false
-    var heightWork =false
-    var lengthWork =false
+    console.log(speed);
     for(var i=0; i<coasterName.length; i++){
         if(material==constructionMaterial[i]&&region==parkRegion[i]&&Math.abs(rollerSpeed[i] - speed) < 20&&Math.abs(rollerHeight[i] - height) < 20&&Math.abs(rollerLength[i] - length) < 500&&inversion[i]==inversionStatus){
-            infoList= "(Coaster Name: "+coasterName[i]+", Park Name:"+parkName[i]+", City:"+city[i]+", Country: "+country[i]+")"
+            infoList= "(Coaster Name: "+coasterName[i]+", Park Name:"+parkName[i]+", City:"+city[i]+", Country: "+country[i]+")"+"<br>"
             matchingOutputs.push(infoList)
-            // console.log(infoList)
-            
         }
-        infoList=""
+      
     }
     if(matchingOutputs="[]"){
             matchingOutputs="Sorry we couldn't find any matches"
     }
-    console.log(matchingOutputs)
-    speedWork=false
-    heightWork=false
-    lengthWork=false
-    inversionStatus="no"
+   
+    document.getElementById("output").innerHTML=matchingOutputs
 
 }
