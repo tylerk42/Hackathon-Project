@@ -16,9 +16,22 @@ var city= getColumn(url,3)
 var country= getColumn(url,4)
 var parkRegion= getColumn(url,5)
 var constructionMaterial= getColumn(url,6)
-var rollerHeight= getColumn(url,7)*3.28
-var rollerSpeed= getColumn(url,8)/1.609
-var rollerLength= getColumn(url,9)*3.28
+var rawHeight= getColumn(url,7)
+var rollerHeight = [];
+for(var i = 0; i < rawHeight.length; i++){
+    rollerHeight.push(rawHeight[i] * 3.28);
+}
+
+var rawSpeed= getColumn(url,8)
+var rollerSpeed=[];
+for(var j=0;j<rollerSpeed;j++){
+    rollerSpeed.push(rawSpeed[j]/1.609)
+}
+var rawLength= getColumn(url,9)
+var rollerLength=[];
+for(var k = 0; k<rawLength;k++){
+    rollerLength.push(rawLength*3.28)
+}
 var inversion=getColumn(url,10)
 
 // function createlist(){
@@ -26,10 +39,10 @@ var inversion=getColumn(url,10)
 // }
 var inversionStatus=false;
 function inversionTrue(){
-inversionStatus=true
+inversionStatus="yes"
 }
 function inversionFalse(){
-    inversionStatus=false
+    inversionStatus="no"
 }
 function createlist(material, region, speed, height, length){
     document.getElementById("output").innerHTML=""
