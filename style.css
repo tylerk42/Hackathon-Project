@@ -11,8 +11,12 @@ header{
     margin: 10px;
     border-radius: 25px;
     padding: 20px;
-    width: 450px;
-    height: 150px;
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    
+
 }
 
 
@@ -50,8 +54,8 @@ button{
     font-style: normal;
     border-radius: 25px;
     padding: 20px;
-    width: 400px;
-    height: 150px;
+    width: 80%;
+    height: fit-content;
 }
 label{
     font-family: "Outfit", sans-serif;

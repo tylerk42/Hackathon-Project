@@ -1,4 +1,6 @@
+//spreadsheet url
 var url = "https://raw.githubusercontent.com/b-mcavoy/datasets/refs/heads/main/Science/Rollercoasters.csv"
+//functions to show the value of the slider
 function showSpeed(){
     document.getElementById("sliderVal").innerHTML = document.getElementById("coasterSpeed").value
 }
@@ -8,58 +10,69 @@ function showHeight(){
 function showLength(){
     document.getElementById("sliderNum").innerHTML = document.getElementById("coasterLength").value
 }
-
-
+//setting variables from spreadhsheet
 var coasterName= getColumn(url,1)
 var parkName= getColumn(url,2)
 var city= getColumn(url,3)
 var country= getColumn(url,4)
 var parkRegion= getColumn(url,5)
 var constructionMaterial= getColumn(url,6)
+var inversion=getColumn(url,10)
+//transforming height list to convert meters into yards
 var rawHeight= getColumn(url,7)
 var rollerHeight = [];
-for(var i = 0; i < rawHeight.length; i++){
-    rollerHeight.push(rawHeight[i] * 3.28);
+var l=0
+while(l<rawHeight.length){
+    l++
+    rollerHeight.push(rawHeight[l] * 1.094);
 }
-
+//transforming speed list to convert km/h into mph
 var rawSpeed= getColumn(url,8)
 var rollerSpeed=[];
-for(var j=0;j<rollerSpeed;j++){
-    rollerSpeed.push(rawSpeed[j]/1.609)
+var j=0;
+while(j<rawSpeed.length){
+    j++
+    rollerSpeed.push(rawSpeed[j]/1.094)
 }
+//transforming length list to convert meters into yards
 var rawLength= getColumn(url,9)
 var rollerLength=[];
-for(var k = 0; k<rawLength;k++){
-    rollerLength.push(rawLength*3.28)
+var k=0;
+while(k<rawLength.length){
+    k++
+    rollerLength.push(rawLength[k] * 3.28);
 }
-var inversion=getColumn(url,10)
-
-// function createlist(){
-//     console.log(document.getElementById("coasterHeight").value)
-// }
-var inversionStatus=false;
+//setting default inversion to no
+var inversionStatus="No";
+//functions to change inversion status when the button is clicked
 function inversionTrue(){
-inversionStatus="yes"
+    inversionStatus="Yes"
 }
 function inversionFalse(){
-    inversionStatus="no"
+    inversionStatus="No"
 }
+//function that runs on find my coaster buttom
+//takes parameters of all five inputs
 function createlist(material, region, speed, height, length){
-    document.getElementById("output").innerHTML=""
+    //creating variables that contribute to output
     var matchingOutputs=[];
     var infoList;
-    console.log(speed);
+    //loop to run through all the coasters
     for(var i=0; i<coasterName.length; i++){
-        if(material==constructionMaterial[i]&&region==parkRegion[i]&&Math.abs(rollerSpeed[i] - speed) < 20&&Math.abs(rollerHeight[i] - height) < 20&&Math.abs(rollerLength[i] - length) < 500&&inversion[i]==inversionStatus){
-            infoList= "(Coaster Name: "+coasterName[i]+", Park Name:"+parkName[i]+", City:"+city[i]+", Country: "+country[i]+")"+"<br>"
-            matchingOutputs.push(infoList)
+        //checking if the coaster at i matches all of the outputs
+        //for speed length and height there is a range of difference to make it work more often
+        if(Math.abs(rollerSpeed[i]-speed)<27&&Math.abs(rollerLength[i]-length)<866&&Math.abs(rollerHeight[i]-height)<50&&inversionStatus==inversion[i]&&constructionMaterial[i]==material&&parkRegion[i]==region){
+        //adding all the information for the coaster that works to a variable
+        infoList= "Coaster Name: "+coasterName[i]+", Park Name: "+parkName[i]+", City:"+city[i]+", Country: "+country[i];
+        //adding info list to the list variable
+        matchingOutputs.push(infoList)
         }
-      
     }
-    if(matchingOutputs="[]"){
-            matchingOutputs="Sorry we couldn't find any matches"
+    //writing an error message
+    if(matchingOutputs.length == 0){
+            matchingOutputs=["Sorry, we couldn't find any matches"]
     }
-   
-    document.getElementById("output").innerHTML=matchingOutputs
-
+    //adding matching outputs to the output box
+    //joining matching ouputs together and adding a break between all coasters
+    document.getElementById("output").innerHTML=matchingOutputs.join("<br><br>")
 }

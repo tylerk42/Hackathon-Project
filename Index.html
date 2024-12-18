@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <title>Document</title>
+</head>
+
+
+<body>
+    <header>
+        <center>
+    
+        <H1>Roller Coasters Of The World!!!</H1>
+        <h3> If you love rollercoasters but aren't sure which is best for you,then this is the right place for you!</h3>
+    </header>
+        <center>
+   
+    
+    <select name="material" id="material">
+        <option value="-1">Please Select Material Preferance</option>
+        <option value="Steel">Steel</option>
+        <option value="Wood">Wood</option>
+    </select>
+    
+    <select name="region" id="region">
+        <option value="-1">Please Select Region</option>
+        <option value="Europe">Europe</option>
+        <option value="North America">North America</option>
+        <option value="Latin America">Latin America</option>
+    </select>
+
+
+    <div><br>Speed Of Roller Coaster
+        <br>
+        <label>Speed (m/h): </label>
+        <Label id="sliderVal"></Label><input oninput="showSpeed()" type="range" min="5" max="80" value="5" class="slider" id="coasterSpeed">
+    </div>
+
+    <div><br>Height Of Roller Coaster
+        <br>
+        <label>Height(yards): </label>
+        <Label id="sliderValue"></Label><input oninput="showHeight()" type="range" min="3" max="150" value="3" class="slider" id="coasterHeight">
+    </div>
+
+    <div><br>Length Of Roller Coaster
+        <br>
+        <label>Length(yards): </label>
+        <Label id="sliderNum"></Label><input oninput="showLength()" type="range" min="60" max="2600" value="60" class="slider" id="coasterLength">
+    </div>
+<br>
+Would You Like Inversions?
+<button onclick="inversionTrue()">Yes!</button>
+<button onclick="inversionFalse()">No Thanks</button>
+<br>
+<br>
+<button onclick="createlist(document.getElementById('material').value, document.getElementById('region').value,document.getElementById('coasterSpeed').value, document.getElementById('coasterHeight').value,document.getElementById('coasterLength').value)">Find My Coaster!</button>
+
+<div class="outputBox">
+    <p id="output">   </p>
+</div>
+
+
+
+<script src="Utils.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
