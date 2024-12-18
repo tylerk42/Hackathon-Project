@@ -23,24 +23,27 @@ var rawHeight= getColumn(url,7)
 var rollerHeight = [];
 var l=0
 while(l<rawHeight.length){
-    l++
+   
     rollerHeight.push(rawHeight[l] * 1.094);
+    l++
 }
 //transforming speed list to convert km/h into mph
 var rawSpeed= getColumn(url,8)
 var rollerSpeed=[];
 var j=0;
 while(j<rawSpeed.length){
+   
+    rollerSpeed.push(rawSpeed[j]/1.609)
     j++
-    rollerSpeed.push(rawSpeed[j]/1.094)
 }
 //transforming length list to convert meters into yards
 var rawLength= getColumn(url,9)
 var rollerLength=[];
 var k=0;
 while(k<rawLength.length){
+    
+    rollerLength.push(parseFloat(rawLength[k]) * 1.094);
     k++
-    rollerLength.push(rawLength[k] * 3.28);
 }
 //setting default inversion to no
 var inversionStatus="No";
@@ -53,7 +56,7 @@ function inversionFalse(){
 }
 //function that runs on find my coaster buttom
 //takes parameters of all five inputs
-function createlist(material, region, speed, height, length){
+function createlist(material, region, speed, height, chosenlength){
     //creating variables that contribute to output
     var matchingOutputs=[];
     var infoList;
@@ -61,7 +64,8 @@ function createlist(material, region, speed, height, length){
     for(var i=0; i<coasterName.length; i++){
         //checking if the coaster at i matches all of the outputs
         //for speed length and height there is a range of difference to make it work more often
-        if(Math.abs(rollerSpeed[i]-speed)<27&&Math.abs(rollerLength[i]-length)<866&&Math.abs(rollerHeight[i]-height)<50&&inversionStatus==inversion[i]&&constructionMaterial[i]==material&&parkRegion[i]==region){
+
+       if(Math.abs(rollerSpeed[i]-speed)<27&&Math.abs(rollerLength[i]-length)<866&&Math.abs(rollerHeight[i]-height)<50&&inversionStatus==inversion[i]&&constructionMaterial[i]==material&&parkRegion[i]==region){
         //adding all the information for the coaster that works to a variable
         infoList= "Coaster Name: "+coasterName[i]+", Park Name: "+parkName[i]+", City:"+city[i]+", Country: "+country[i];
         //adding info list to the list variable
