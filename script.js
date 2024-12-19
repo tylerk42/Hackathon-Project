@@ -56,7 +56,7 @@ function inversionFalse(){
 }
 //function that runs on find my coaster buttom
 //takes parameters of all five inputs
-function createlist(material, region, speed, height, chosenlength){
+function createlist(material, region, speed, height, length){
     //creating variables that contribute to output
     var matchingOutputs=[];
     var infoList;
